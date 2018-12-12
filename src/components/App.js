@@ -1,9 +1,18 @@
-import React, { Component } from 'react'
+import { Route, Switch } from 'react-router-dom'
+import React from 'react'
 
-class App extends Component {
-    render() {
-        return <h1>Hello World</h1>
-    }
-}
+// APP Components
+import Main from './Main/Index'
+import NotFound from './Main/NotFound'
+import Home from './Home/Index'
 
-export default App
+const Routes = () => (
+    <Main>
+        <Switch>
+            <Route exact path='/' component={ Home } />
+            <Route component={ NotFound } />
+        </Switch>
+    </Main>
+)
+
+export default Routes
