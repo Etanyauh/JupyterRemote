@@ -12,7 +12,7 @@ class Navigation extends Component {
             no_auth_links: [
                 { text: "Home", url: "/" },
                 { text: "About", url: "/about" },
-                { text: "Login", url: "/login" },
+                { text: "Login", url: "/auth" },
             ],
             auth_links: [
                 { text: 'Home', url: '/' },
