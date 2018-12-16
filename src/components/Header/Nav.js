@@ -7,7 +7,7 @@ class Navigation extends Component {
         this.states = {
             // Gets the user token
             user_token: window.sessionStorage.getItem('jwtToken'),
-
+            
             // Links for unauthorized and authorized
             no_auth_links: [
                 { text: "Home", url: "/" },
