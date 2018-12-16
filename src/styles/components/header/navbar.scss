@@ -1,5 +1,26 @@
-nav.navigation {
-    display: flex;
-    flex-direction: row;
-    // background: red;
+// NAVIGATION ITEMS
+nav.navbar {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.nav-item {
+    font-size: 1.3rem;
+}
+
+a.nav-link {
+    color: #353b48;
+}
+
+.navbar-brand {
+    color: #2f3640;
+}
+
+a.nav-link:hover {
+    color: #222f3e;
+    font-size: 1.4rem;
+}
+
+.navbar-brand:hover {
+    color: #222f3e;
 }

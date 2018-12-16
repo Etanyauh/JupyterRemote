@@ -6,7 +6,6 @@ class Header extends Component {
         return (
             <header>
                 <Navigation />
-                <p>The header</p>
             </header>
         )
     }

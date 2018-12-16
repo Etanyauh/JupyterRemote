@@ -26,12 +26,19 @@ class Navigation extends Component {
 
     render() {
         return (
-            <nav className="navigation">
-                <h3>Jupyter Remote</h3>
-                <ul className="nav-items">
-                    {this.navLinks()}
-                </ul>
-            </nav>
+            <div className="container">
+                <nav className="navbar navbar-expand-lg row justify-content-between">
+                    <div>
+                        <Link to='/' className="navbar-brand col-8"><h2>Jupyter Remote</h2></Link>
+                    </div>
+
+                    <div className="collapse navbar-collapse col-4" id="navbarText">
+                        <ul className="navbar-nav mr-auto">
+                            {this.navLinks()}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
         )
     }
 
@@ -46,8 +53,8 @@ class Navigation extends Component {
     authLinks() {
         return this.states.auth_links.map((val, key) => {
             return (
-                <li key={key}>
-                    <Link to={val.url}>{val.text}</Link>
+                <li key={key} className="nav-item active">
+                    <Link to={val.url} className="nav-link">{val.text}</Link>
                 </li>
             )
         })
@@ -56,8 +63,8 @@ class Navigation extends Component {
     noAuthLinks() {
         return this.states.no_auth_links.map((val, key) => {
             return (
-                <li key={key}>
-                    <Link to={val.url}>{val.text}</Link>
+                <li key={key} className="nav-item active">
+                    <Link to={val.url} className="nav-link">{val.text}</Link>
                 </li>
             )
         })
