@@ -2,14 +2,23 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 40rem;
+    height: 46rem;
 }
 
 .inner {
-    padding: 20rem;
+    padding: 18rem;
 }
 
 .action-btn {
     width: 10rem;
     margin: 0 auto;
+}
+
+.cover-paragraph {
+    color: #222f3e;
+    font-size: 1.2rem;
+}
+
+.cover-heading {
+    color: #2f3640;
 }
