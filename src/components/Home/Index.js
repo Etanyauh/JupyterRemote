@@ -15,7 +15,6 @@ class Home extends Component {
                     {userToken === null ? 
                         <div className="action-btn">
 
-                            {console.log(userToken)}
                             <Link to='auth'>
                                 <button className="btn btn-success btn-lg">Login / Signup</button>
                             </Link>
