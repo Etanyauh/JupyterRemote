@@ -12,8 +12,10 @@ class Home extends Component {
                     <p className="center cover-paragraph">Jupyter remote is a project that aims at making jupyter notebooks a tool that
                        can be used remotely by multiple users at the same time.</p>
 
-                    {!userToken ? 
+                    {userToken === undefined ? 
                         <div className="action-btn">
+
+                            {console.log(userToken)}
                             <Link to='auth'>
                                 <button className="btn btn-success btn-lg">Login / Signup</button>
                             </Link>

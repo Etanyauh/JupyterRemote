@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Redirect } from 'react-router-dom'
 import { url } from '../../config'
 
 class Signup extends Component {
@@ -9,13 +10,19 @@ class Signup extends Component {
             username: "",
             password: "",
             job: "Student",
-            error: ""
+            error: "",
+            message: ""
         }
     }
 
     render() {
+        const { error, message } =  this.state
+
         return (  
             <div className="form-box">
+                {error ? <p className="text-danger">{ error }</p> : ""}
+                {message ? <p className="text-success">{ message }</p> : ""}
+
                 <div className="form-group">
                     <label className="form-label" htmlFor="username">Username</label>
                     <input onChange={(e) => this.getValues("username", e)} type="username" className="form-control" id="username" placeholder="Username"></input>
@@ -67,16 +74,25 @@ class Signup extends Component {
     onLogin(res) {
         const { token } = res
         window.sessionStorage.setItem('jwtToken', token)
+
+        this.setState({
+            message: "Suscesfully Logged in!",
+            error: ""
+        })
+
+        return <Redirect to='/' />
     }
 
     setError(error) {
         if("Message" in error) {
             this.setState({
-                error: error.Message
+                error: error.Message,
+                message: ""
             })
         } else {
             this.setState({
-                error: "Invalid Credentials"
+                error: "Invalid Credentials",
+                message: ""
             })
         }
     }       
