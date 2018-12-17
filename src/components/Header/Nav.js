@@ -29,10 +29,10 @@ class Navigation extends Component {
             <div className="container">
                 <nav className="navbar navbar-expand-lg row justify-content-between">
                     <div>
-                        <Link to='/' className="navbar-brand col-8"><h2>Jupyter Remote</h2></Link>
+                        <Link to='/' className="navbar-brand col-9"><h2>Jupyter Remote</h2></Link>
                     </div>
 
-                    <div className="collapse navbar-collapse col-4" id="navbarText">
+                    <div className="collapse navbar-collapse col-3" id="navbarText">
                         <ul className="navbar-nav mr-auto">
                             {this.navLinks()}
                         </ul>
