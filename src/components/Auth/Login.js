@@ -3,14 +3,19 @@ import React, { Component } from 'react'
 class Login extends Component {
     render() {
         return (
-            <div className="form-group mb-2">
-                <label for="staticEmail2" className="sr-only">Email</label>
-                <input type="text" className="form-control-plaintext" id="staticEmail2" placeholder="email@example.com"></input>
-                <div className="form-group mb-2">
-                    <label for="inputPassword2" className="sr-only">Password</label>
-                    <input type="password" className="form-control" id="inputPassword2" placeholder="Password"></input>
+            <div className="form-box">
+                <div className="form-group">
+                    <label className="form-label" htmlFor="email">Email address</label>
+                    <input type="email" className="form-control" id="email" placeholder="name@example.com"></input>
                 </div>
-            </div>
+
+                <div className="form-group">
+                    <label className="form-label" htmlFor="password">Password</label>
+                    <input type="password" className="form-control" id="password" placeholder="*****"></input>
+                </div>
+
+                <button type="submit" className="btn btn-primary mb-2">Login</button>
+           </div>
         )
     }
 }

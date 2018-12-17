@@ -7,7 +7,7 @@ class Auth extends Component {
         super(props)
         this.state = {
             // this is to verify if the user has an account 
-            hasAccount: false
+            hasAccount: true
         }
 
         this.currentAuthState = this.currentAuthState.bind(this)
@@ -15,9 +15,8 @@ class Auth extends Component {
 
     render() {
        return (
-            <form className="form-inline">
+            <form className="auth-form">
                 {this.currentAuthState()}
-                <button type="submit" className="btn btn-primary mb-2">Confirm identity</button>
             </form>
         )
     }
@@ -26,10 +25,34 @@ class Auth extends Component {
         const { hasAccount } = this.state
 
         if (hasAccount) {
-            return <Login />
+            return (
+                <div>
+                    <Login />
+                    <small>Dont have an account? <button className="btn btn-sm" onClick={(e) => this.accountState(e)}>Sign up</button></small>
+                </div>
+            )
         } 
 
-        return <Signup />
+        return (
+            <div>
+                <Signup />
+                <small>Already have an account? <button className="btn btn-sm" onClick={(e) => this.accountState(e)}>Login</button></small>
+            </div>
+        )
+    }
+
+    accountState(event) {
+        event.preventDefault()
+
+        if (this.state.hasAccount) {
+            this.setState({
+                hasAccount: false
+            })
+        } else {
+            this.setState({
+                hasAccount: true
+            })
+        }
     }
 }
 

@@ -1,0 +1,23 @@
+.auth-form {
+    margin: 0 auto;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #353b48;
+    font-size: 1.2rem;
+}
+
+.form-box {
+    background: #555;
+    padding: 2rem;
+    border-radius: 5%;
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    color: #bdc3c7;
+}
