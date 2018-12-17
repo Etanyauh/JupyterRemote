@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 class Navigation extends Component {
     constructor(props) {
         super(props)
-        this.states = {
+        this.state = {
             // Gets the user token
             user_token: window.sessionStorage.getItem('jwtToken'),
             
@@ -43,7 +43,7 @@ class Navigation extends Component {
     }
 
     navLinks() {
-        if (this.states.user_token) {
+        if (this.state.user_token) {
             return this.authLinks()
         }
 
@@ -51,7 +51,7 @@ class Navigation extends Component {
     }
 
     authLinks() {
-        return this.states.auth_links.map((val, key) => {
+        return this.state.auth_links.map((val, key) => {
             return (
                 <li key={key} className="nav-item active">
                     <Link to={val.url} className="nav-link">{val.text}</Link>
@@ -61,7 +61,7 @@ class Navigation extends Component {
     }
 
     noAuthLinks() {
-        return this.states.no_auth_links.map((val, key) => {
+        return this.state.no_auth_links.map((val, key) => {
             return (
                 <li key={key} className="nav-item active">
                     <Link to={val.url} className="nav-link">{val.text}</Link>
