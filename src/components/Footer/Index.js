@@ -4,7 +4,7 @@ class Footer extends Component {
     render() {
         return (
             <footer>
-                <p>The Footer</p>
+                <p className="center">Made with <span className="text-heart">&hearts;</span> By the Jupyter Remote GenOne Team.</p>
             </footer>
         )
     }
